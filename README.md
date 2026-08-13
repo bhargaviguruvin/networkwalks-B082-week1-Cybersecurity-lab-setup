@@ -1,139 +1,134 @@
-NetworkWalks B082 - Week 1 Cybersecurity Lab Setup
+networkwalks-B082-week1-Cybersecurity-labsetup
+# 🔐 Cybersecurity Lab Setup
 
-🛡️ Cybersecurity Lab Environment Setup
+A hands-on cybersecurity lab environment built using VirtualBox and Kali Linux for practicing cybersecurity, networking, ethical hacking, and security analysis in a controlled environment.
 
-This project documents my Week 1 Cybersecurity Lab Setup as part of the NetworkWalks cybersecurity practical lab.
+## 🎯 Objectives
 
-The objective of this project was to build and configure a practical cybersecurity lab environment using Oracle VirtualBox and Kali Linux, configure a custom NAT Network, configure IPv4 networking, and verify network connectivity.
+- Set up a practical cybersecurity laboratory.
+- Configure VirtualBox networking.
+- Create a custom NAT Network.
+- Configure Kali Linux networking.
+- Verify network connectivity.
+- Create VM snapshots for safe lab experimentation.
+- Prepare the environment for future cybersecurity and SOC practice.
 
----
+## 🛠️ Lab Environment
 
-🎯 Project Objectives
+| Component    | Configuration     |
+|--------------|-------------------|
+| Hypervisor   | Oracle VirtualBox |
+| Security VM  | Kali Linux        |
+| Network Type | NAT Network       |
+| Network Name | NatNetwork        |
+| Network CIDR | 10.0.0.0/24       |
+| Kali IP      | 10.0.0.2/24       |
+| Gateway      | 10.0.0.1          |
+| DHCP         | Enabled           |
+| IPv6         | Disabled          |
 
-- Set up a cybersecurity practice environment.
-- Configure Oracle VirtualBox.
-- Create and configure a custom NAT Network.
-- Set up Kali Linux in VirtualBox.
-- Configure IPv4 network settings.
-- Verify Internet connectivity.
-- Test connectivity with the network gateway.
-- Document the configuration and testing process.
+## 🌐 Lab Architecture
 
----
+```text
+                 HOST WINDOWS PC
+                       │
+                   VirtualBox
+                       │
+              ┌────────┴────────┐
+              │    NatNetwork   │
+              │   10.0.0.0/24   │
+              └────────┬────────┘
+                       │
+                  ┌────┴────┐
+                  │  Kali   │
+                  │10.0.0.2 │
+                  └─────────┘
+🧪 Phase 1 — Kali Linux Lab Setup
 
-🛠️ Tools & Technologies
-
-- Oracle VirtualBox
-- Kali Linux
-- Windows
-- NAT Network
-- IPv4
-- Ping
-- Linux Terminal
-
----
-
-🌐 Network Configuration
-
-The VirtualBox lab was configured using a custom NAT Network.
-
+1. VirtualBox NAT Network
+A custom NAT Network named NatNetwork was created using the 10.0.0.0/24 network.
 Network: 10.0.0.0/24
+DHCP: Enabled
+IPv6: Disabled
+2. Kali Linux Network Configuration
+Kali Linux was connected to the custom NatNetwork.
+The assigned IPv4 address was:
+10.0.0.2/24
+3. Network Connectivity Testing
+The network configuration was verified using ICMP ping tests.
+Gateway Test
+ping -c 4 10.0.0.1
+Result:
+4 packets transmitted
+4 packets received
+0% packet loss
+Internet Connectivity Test
+ping -c 4 8.8.8.8
+Result:
+4 packets transmitted
+4 packets received
+0% packet loss
+4. VM Snapshot
+A clean snapshot was created after successfully configuring and testing the Kali Linux environment.
+Snapshot:
+Kali-Clean-Network-Setup
 
-The network configuration was tested from the Kali Linux virtual machine.
-
----
-
-🐉 Kali Linux Setup
-
-Kali Linux was installed and configured as the main cybersecurity practice virtual machine.
-
-The following tasks were completed:
-
-- Kali Linux VM configuration
-- VirtualBox network adapter configuration
-- IPv4 configuration
-- Network connectivity verification
-- Gateway connectivity testing
-- Internet connectivity testing
-
----
-
-🔢 IPv4 Network Configuration
-
-The IPv4 configuration of the Kali Linux virtual machine was checked and verified.
-
-The configuration was performed according to the NetworkWalks lab setup requirements.
-
----
-
-🌍 Internet Connectivity Test
-
-Internet connectivity from Kali Linux was tested successfully.
-
-This confirmed that the virtual machine was able to communicate outside the local virtual network.
-
----
-
-📡 Gateway Ping Test
-
-A ping test was performed to verify connectivity between Kali Linux and the configured network gateway.
-
-The successful response confirmed that the network configuration was functioning correctly.
-
----
-
-📸 Project Screenshots
-
-Screenshots documenting the lab setup and testing process are included in this repository.
-
-The screenshots cover:
-
-1. NAT Network Configuration
-2. Kali Linux IP Address
-3. IPv4 Network Configuration
-4. Internet Connectivity Test
-5. Gateway Ping Test
-6. Additional lab configuration screenshots
-
----
+📸 Evidence
+Screenshots documenting the setup and verification will be added here.
 
 📚 What I Learned
 
-Through this project, I learned how to:
+Through this lab setup, I gained practical experience with:
+Virtual machines
+VirtualBox networking
+NAT Networks
+IPv4 addressing
+/24 subnet configuration
+Gateway connectivity
+Network connectivity testing
+Kali Linux networking
+VM snapshots
+Cybersecurity lab documentation
 
-- Configure a virtual cybersecurity laboratory.
-- Work with Oracle VirtualBox networking.
-- Configure a NAT Network.
-- Understand basic IPv4 configuration.
-- Check network information in Kali Linux.
-- Test connectivity using ping.
-- Troubleshoot basic network connectivity.
-- Document practical cybersecurity lab work.
+🚀 Future Work
 
----
+The lab will be expanded with additional virtual machines and practical cybersecurity exercises, including:
+Windows VM setup
+Kali-to-Windows connectivity
+Network traffic analysis
+Wireshark
+Nmap
+Windows Event Log analysis
+Linux log analysis
+Security monitoring
+Incident investigation
+SOC Analyst practice labs
 
-🔐 Security & Ethics
+⚠️ Ethical Use
 
-This laboratory environment is intended for educational and authorized cybersecurity practice.
+This laboratory is intended for authorized cybersecurity learning and experimentation in a controlled environment.
+All security testing should only be performed against systems for which permission has been obtained.
 
-All testing should be performed only on systems and networks where permission has been provided.
+📌 Project Status
 
----
+Phase 1 — Completed ✅
+[x] VirtualBox setup
+[x] NAT Network configuration
+[x] Kali Linux setup
+[x] Kali IP configuration
+[x] Gateway connectivity test
+[x] Internet connectivity test
+[x] Kali VM snapshot
+Phase 2 — Upcoming 🚧
+[ ] Windows VM setup
+[ ] Windows network configuration
+[ ] Kali ↔ Windows connectivity
+[ ] Additional cybersecurity exercises
 
-✅ Project Status
-
-Status: Completed
-
-The required Week 1 Cybersecurity Lab Setup has been completed and documented.
-
-Optional components are not included in this submission.
-
----
 
 👩‍💻 Author
-
 G Bhargavi
 
-NetworkWalks - Week 1 Cybersecurity Lab Setup
-
-#Networkwalks #Cybersecurity #KaliLinux #VirtualBox #NetworkSecurity
+Cybersecurity | Network Security | Ethical Hacking
+NetworkWalks B082 — Week 1 Cybersecurity Lab Setup
+This project was completed as part of the NetworkWalks cybersecurity practical lab.
